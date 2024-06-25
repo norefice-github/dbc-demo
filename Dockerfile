@@ -1,5 +1,8 @@
 FROM rust:1.77 AS builder
 WORKDIR /src
+COPY Cargo.toml Cargo.lock ./
+RUN mkdir src && echo "fn main() {println!(\"if you see this, the build broke\")}" > src/main.rs
+RUN cargo build --release
 COPY . .
 RUN --mount=type=cache,target=/usr/local/cargo/git \
     --mount=type=cache,target=/usr/local/cargo/registry \
