@@ -47,8 +47,8 @@ jobs:
         with:
           builder_type: ${{ inputs.builder_type }}
           platforms: ${{ inputs.platforms }}
-          docker_username: ${{ vars.DOCKER_USERNAME }}
-          docker_password: ${{ secrets.DOCKER_PASSWORD }}
+          docker_username: ${{ vars.DOCKER_USER }}
+          docker_password: ${{ secrets.DOCKER_PAT }}
           docker_hub_account: ${{ vars.DOCKER_HUB_ACCOUNT }}
           cloud_builder: ${{ vars.CLOUD_BUILDER }}
           no-cache: ${{ inputs.no-cache }}
